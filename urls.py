@@ -1,8 +1,7 @@
-# myproject/urls.py
 from django.urls import path
-from . import views
+from . import signup, login
 
 urlpatterns = [
-    path('', views.signup, name='home'),  
-    path('signup/', views.signup, name='signup'),  
+    path('C:\Users\PC\Desktop\OnlineVotingPoll\votingpoll\accounts', signup.signup, name='signup'),  
+    path('C:\Users\PC\Desktop\OnlineVotingPoll\votingpoll\accounts', login.user_login, name='login'),  
 ]
