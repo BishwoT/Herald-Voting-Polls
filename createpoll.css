@@ -1,0 +1,141 @@
+/* General Layout for Create Poll Page */
+.create-poll-page {
+    margin-top: 80px; /* Ensure it doesn't overlap with the header */
+    padding: 20px;
+  }
+  
+  /* Create Poll Heading */
+  .create-poll-header h1 {
+    font-size: 36px;
+    color: #0f572b; /* Matching color to header background */
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 350px;
+  }
+  
+  .create-poll-header p {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left: 350px;
+  }
+  
+  /* Create Poll Form */
+  .create-poll-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 350px;
+    margin-right: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .answer-options {
+    display: flex;
+    flex-direction: column; /* Stack options vertically */
+    gap: 15px; /* Space between each option */
+    margin-bottom: 10px;
+    margin-right: 600px;
+  }
+  
+  .answer-options input {
+    width: 100%;
+  }
+  
+  .add-option-btn {
+    background-color: #0f572b;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-option-btn:hover {
+    background-color: #07431b; /* Darker shade on hover */
+  }
+  
+  /* Privacy Options */
+  .privacy-options {
+    display: flex;
+    flex-direction: column; /* Stack radio buttons vertically */
+    gap: 10px; /* Space between radio buttons */
+  }
+  
+  .privacy-options label {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .privacy-options input {
+    margin-right: 10px; /* Adjust gap between radio and labels */
+  }
+  
+  /* Form Actions (Buttons) */
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .submit-btn, .save-btn {
+    padding: 12px 20px;
+    background-color: #0f572b; /* Matching color to header background */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submit-btn:hover, .save-btn:hover {
+    background-color: #07431b; /* Darker shade on hover */
+    transform: scale(1.05);
+  }
+  
+  .submit-btn:active, .save-btn:active {
+    background-color: #052b15; /* Even darker shade when clicked */
+    transform: scale(0.98);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 991px) {
+    .create-poll-form {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .create-poll-header h1 {
+      font-size: 28px;
+    }
+    .create-poll-form {
+      padding: 10px;
+    }
+  }
+  

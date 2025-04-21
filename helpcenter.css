@@ -1,0 +1,79 @@
+/* General Layout for Help Center */
+.help-center-page {
+    margin-top: 80px; /* Ensure it doesn't overlap with the header */
+    padding: 20px;
+  }
+  
+  /* Help Center Heading */
+  .help-center-header h1 {
+    font-size: 36px;
+    color: #0f572b; /* Matching color to header background */
+    text-align: left; /* Align it with the sidebar */
+    margin-bottom: 20px;
+    margin-left: 350px;
+  }
+  
+  /* Problem Description Text Box */
+  .help-center-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 350px;
+    margin-right: 20px;
+  }
+  
+  .problem-textbox {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical; /* Allow resizing of the textbox vertically */
+    height: 250px; /* Increase height of the textbox */
+  }
+  
+  .submit-btn {
+    padding: 12px 20px;
+    background-color: #0f572b; /* Matching color to header background */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 10%;
+  }
+  
+  .submit-btn:hover {
+    background-color: #07431b; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+  }
+  
+  .submit-btn:active {
+    background-color: #052b15; /* Even darker shade when clicked */
+    transform: scale(0.98); /* Shrink the button slightly on click */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 991px) {
+    .help-center-page {
+      padding: 10px;
+    }
+  
+    .problem-textbox {
+      font-size: 14px;
+    }
+  
+    .submit-btn {
+      width: 100%; /* Make the button full width on smaller screens */
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .help-center-header h1 {
+      font-size: 28px;
+    }
+  }
+  

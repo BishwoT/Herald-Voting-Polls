@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="header.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="hamburger-menu" id="hamburger-menu" onclick="toggleMenu()">
+        <span id="hamburger-icon" class="hamburger-icon">&#9776;</span> <!-- Hamburger Icon -->
+      </div>
+      <div class="logo-text">
+        <img src="images/white_voting_logo.png" alt="Voting Icon" class="voting-icon" />
+        <span>Online Voting System</span>
+      </div>
+      
+      <nav class="sidebar" id="sidebar" class="active"> <!-- Sidebar is open by default -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <img src="images/browse.png" alt="Browse" class="nav-icon" />
+            <span>Browse</span>
+          </li>
+          <li class="nav-item">
+            <img src="images/favorites.png" alt="Favorites" class="nav-icon" />
+            <span>Favorites</span>
+          </li>
+          <li class="nav-item">
+            <img src="images/mypoll.png" alt="My Poll" class="nav-icon" />
+            <span>My Poll</span>
+          </li>
+          <li class="nav-item">
+            <img src="images/results.png" alt="Results" class="nav-icon" />
+            <span>Results</span>
+          </li>
+          <li class="nav-item">
+            <img src="images/settings.png" alt="Settings" class="nav-icon" />
+            <span>Settings</span>
+          </li>
+          <li class="nav-item">
+            <img src="images/help.png" alt="Help Center" class="nav-icon" />
+            <span>Help Center</span>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <img src="images/search-icon-png-9982.png" alt="Search" class="search-icon" />
+        </div>
+        <div class="profile-container">
+          <img src="images/no-profile-picture-15257.png" alt="Profile" class="profile-icon" />
+          <span>Profile</span>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <!-- Your main content here -->
+    </main>
+
+    <script>
+      // Function to toggle the sidebar visibility
+      function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active'); // This toggles the 'active' class
+      }
+    </script>
+  </body>
+</html>

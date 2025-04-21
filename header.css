@@ -1,0 +1,230 @@
+/* General Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;  /* Adjust padding to allow dynamic height */
+    background-color: #0f572b;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+  }
+  
+  /* Hamburger Menu */
+  .hamburger-menu {
+    cursor: pointer;
+    z-index: 15; /* Ensure hamburger icon is always visible */
+  }
+  
+  .hamburger-icon {
+    font-size: 30px;
+    color: #fff;
+    transition: transform 0.2s ease-in-out, opacity 0.1s ease; /* Smooth transition */
+  }
+  
+  .hamburger-menu:hover .hamburger-icon {
+    transform: scale(1.2); /* Enlarge the hamburger icon on hover */
+  }
+  
+  .hamburger-menu:active .hamburger-icon {
+    transform: scale(1.1); /* Slightly shrink the hamburger icon when clicked */
+    opacity: 0.8; /* Add slight transparency for click effect */
+  }
+  
+  /* Logo */
+  .logo-text {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 20px;
+    flex-grow: 1;
+  }
+  
+  .voting-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  /* Header Actions (Search & Profile) */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+  }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #0f572b;
+    background: transparent;
+  }
+  
+  .search-icon {
+    width: 25px;  /* Set a specific width */
+    height: 25px; /* Set a specific height */
+    max-width: 100%;  /* Ensure it doesn't exceed its container */
+    max-height: 100%; /* Ensure it doesn't exceed its container */
+    object-fit: contain;  /* Ensures the image fits within the box without distortion */
+    margin-right: 10px;
+  }
+  
+  .profile-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #0f572b;
+    font-size: 16px;
+  }
+  
+  .profile-icon {
+    width: 25px;  /* Set a specific width */
+    height: 25px; /* Set a specific height */
+    max-width: 100%;  /* Ensure it doesn't exceed its container */
+    max-height: 100%; /* Ensure it doesn't exceed its container */
+    object-fit: contain;  /* Ensures the image fits within the box without distortion */
+    margin-right: 10px;
+  }
+  
+  /* Sidebar Navigation */
+  .sidebar {
+    position: fixed;
+    top: 80px; /* Position the sidebar below the header */
+    left: 0;
+    height: calc(100vh - 80px); /* Make sure the sidebar height doesn't cover the header */
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(0); /* Sidebar is open by default */
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+    padding: 20px;
+  }
+  
+  /* Sidebar when it's active (open) */
+  .sidebar.active {
+    transform: translateX(0); /* When sidebar is active, it will slide in */
+  }
+  
+  /* Navigation Menu */
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    font-size: 18px;
+    color: #0f572b;
+    cursor: pointer;
+    padding-left: 20px;
+  }
+  
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 991px) {
+    /* Stack the header items vertically on smaller screens */
+    .header {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 10px;  /* Adjust padding for smaller screens */
+    }
+  
+    /* Adjust header actions (search and profile) */
+    .header-actions {
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    /* Adjust sidebar width on medium screens */
+    .sidebar {
+      width: 200px;
+    }
+  
+    .main-content {
+      margin-left: 200px; /* Adjust content to account for smaller sidebar */
+    }
+  
+    .hamburger-menu {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    /* Adjust the layout further for small screens */
+    .header {
+      padding: 10px;
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  
+    .header-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .sidebar {
+      width: 100%;
+      position: static; /* Make sidebar take full width */
+      height: auto; /* Allow it to flow with the content */
+    }
+  
+    .main-content {
+      margin-left: 0; /* No margin needed for mobile */
+    }
+  
+    .hamburger-icon {
+      font-size: 24px; /* Reduce the hamburger icon size on small screens */
+    }
+  }
+
+  /* Anchor Tags Styling (Remove Default Blue and Underline) */
+.nav-menu .nav-item a {
+    text-decoration: none;  /* Remove underline */
+    color: inherit;         /* Inherit color from the parent element (nav-item) */
+    font-size: 18px;        /* Set font size */
+    font-weight: 600;       /* Font weight */
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+  
+  .nav-menu .nav-item a:hover {
+    background-color: #e5e6e5; /* Darker green background on hover */
+  }
+  
+  .logo-text a {
+    text-decoration: none;  /* Remove underline */
+    color: inherit;         /* Inherit color from the parent element (nav-item) */
+  }
+
+  .profile-container a {
+    text-decoration: none;  /* Remove underline */
+    color: inherit;         /* Inherit color from the parent element (nav-item) */
+  }

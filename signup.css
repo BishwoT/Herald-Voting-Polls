@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+:root {
+    font-size: 16px;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/background1.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    min-height: 300px;
+    height: auto;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.content-wrapper {
+    width: 100%;
+}
+
+.logo {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-label {
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.signup-button {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #218838;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.login-text {
+    font-weight: bold;
+    color: #28a745;
+    text-decoration: none;
+}
+
+.login-text:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 1rem;
+    }
+
+    .signup-button {
+        padding: 10px;
+    }
+
+    .google-button {
+        margin-top: 10px;
+    }
+}
