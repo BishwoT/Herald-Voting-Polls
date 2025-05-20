@@ -1,69 +1,77 @@
+/* Assuming sidebar width is 250px + 20px padding = 270px total */
+
 /* General Layout for Results */
 .results-page {
-    margin-top: 80px; /* Ensure it doesn't overlap with the header */
-    padding: 20px;
+  margin-top: 80px; /* Space for fixed header */
+  padding: 20px;
+  padding-left: 40px; /* Make room for sidebar dynamically */
+  box-sizing: border-box;
+}
+
+/* Results Heading */
+.results-header h1 {
+  font-size: 36px;
+  color: #0f572b;
+  text-align: left;
+  margin-bottom: 20px;
+  /* Removed fixed margin-left */
+}
+
+/* Results List (Vertical Layout) */
+.results-list {
+  display: block;
+  margin-right: 20px;
+  /* Removed fixed margin-left */
+}
+
+/* Result Item Styles */
+.result-item {
+  background-color: #f4f4f4;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.result-item h2 {
+  font-size: 24px;
+  color: #0f572b;
+  margin: 0;
+}
+
+.result-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+.result-item:hover {
+  background-color: #07431b;
+  color: white;
+  transform: scale(1.05);
+}
+
+.result-item:active {
+  background-color: #052b15;
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .results-page {
+    padding-left: 20px; /* Remove sidebar space on smaller screens */
   }
-  
-  /* Results Heading */
-  .results-header h1 {
-    font-size: 36px;
-    color: #0f572b; /* Matching color to header background */
-    text-align: left; /* Align it with the sidebar */
-    margin-bottom: 20px;
-    margin-left: 350px;
-  }
-  
-  /* Results List (Vertical Layout) */
-  .results-list {
-    display: block; /* Ensure the items are displayed vertically */
-    margin-left: 350px;
-    margin-right: 20px;
-  }
-  
-  /* Result Item Styles */
   .result-item {
-    background-color: #f4f4f4;
-    padding: 15px;
-    margin-bottom: 20px; /* Add space between items */
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+    flex: 1 1 100%;
   }
-  
-  .result-item h2 {
-    font-size: 24px;
-    color: #0f572b;
-    margin: 0;
+}
+
+@media (max-width: 640px) {
+  .results-page {
+    padding-left: 20px; /* Remove sidebar space on mobile */
   }
-  
-  .result-item p {
-    font-size: 16px;
-    color: #666;
+  .result-item {
+    flex: 1 1 100%;
   }
-  
-  /* Hover effect for result items */
-  .result-item:hover {
-    background-color: #07431b; /* Darker shade on hover */
-    color: white;
-    transform: scale(1.05);
-  }
-  
-  .result-item:active {
-    background-color: #052b15; /* Even darker shade when clicked */
-    transform: scale(0.98);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 991px) {
-    .result-item {
-      flex: 1 1 100%; /* Make each item take full width on smaller screens */
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .result-item {
-      flex: 1 1 100%; /* Make each item take full width on mobile */
-    }
-  }
-  
+}
