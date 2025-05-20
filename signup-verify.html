@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verify OTP - Registration</title>
+  <link rel="stylesheet" href="signup-verify.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <main class="otp-container">
+    <h1>Verify Your OTP</h1>
+
+    <form id="otp-form">
+      <label for="otp" class="form-label">Enter OTP</label>
+      <input type="text" id="otp" name="otp" class="form-input" maxlength="6" required />
+
+      <button type="submit" class="verify-button">Verify & Complete Signup</button>
+    </form>
+
+    <button id="resend-btn" class="resend-button" disabled>Resend OTP (60s)</button>
+  </main>
+
+  <script src="signup-verify.js"></script>
+</body>
+</html>

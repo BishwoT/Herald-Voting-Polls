@@ -1,0 +1,104 @@
+/* Center the form vertically and horizontally */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  filter: none; /* remove filter from body */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* default text color */
+}
+
+/* Background blur behind form */
+.background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-image: url('images/background1.png');
+  filter: blur(8px);
+  z-index: -1;
+}
+
+/* OTP container styling */
+.otp-container {
+  max-width: 400px;
+  width: 90%;
+  padding: 2rem;
+  background: #fff; /* solid white */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  color: #333; /* dark text for contrast */
+  z-index: 1; /* above background */
+  text-align: center;
+}
+
+.otp-container h1 {
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.form-label {
+  margin-top: 1rem;
+  display: block;
+  font-weight: 600;
+  color: #555;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #f9f9f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #2ecc71;
+  background: #fff;
+}
+
+.verify-button, .resend-button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: #2ecc71;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.verify-button:hover:not(:disabled) {
+  background-color: #27ae60;
+}
+
+.resend-button {
+  background-color: transparent;
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resend-button:hover:not(:disabled) {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.resend-button:disabled {
+  color: #999;
+  border-color: #999;
+  cursor: not-allowed;
+}
