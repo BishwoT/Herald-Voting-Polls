@@ -1,69 +1,75 @@
 /* General Layout for Favorites */
 .favorites-page {
-    margin-top: 80px; /* Ensure it doesn't overlap with the header */
-    padding: 20px;
-  }
-  
-  /* Favorites Heading */
-  .favorites-header h1 {
-    font-size: 36px;
-    color: #0f572b; /* Matching color to header background */
-    text-align: left; /* Align it with the sidebar */
-    margin-bottom: 20px;
-    margin-left: 350px;
-  }
-  
-  /* Favorites List (Vertical Layout) */
+  margin-top: 80px; /* Ensure it doesn't overlap with the header */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px); /* Ensure it takes up the remaining space below the header */
+  transition: margin-left 0.3s ease; /* Smooth transition for margin-left adjustment */
+}
+
+/* Favorites Heading */
+.favorites-header h1 {
+  font-size: 36px;
+  color: #0f572b; /* Matching color to header background */
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+
+/* Favorites List (Vertical Layout) */
+.favorites-list {
+  display: block; /* Ensure the items are displayed vertically */
+  margin-left: 0; /* Will be adjusted dynamically by JavaScript */
+  margin-right: 30px;
+}
+
+/* Favorite Item Styles */
+.favorite-item {
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.favorite-item h2 {
+  font-size: 24px;
+  color: #0f572b;
+  margin: 0;
+}
+
+.favorite-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Hover effect for favorite items */
+.favorite-item:hover {
+  background-color: #07431b; /* Darker shade on hover */
+  color: white;
+  transform: scale(1.05);
+}
+
+.favorite-item:active {
+  background-color: #052b15; /* Even darker shade when clicked */
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
   .favorites-list {
-    display: block; /* Ensure the items are displayed vertically */
-    margin-left: 350;
-    margin-right: 30px;
+    margin-left: 0; /* Remove margin for smaller screens */
   }
-  
-  /* Favorite Item Styles */
   .favorite-item {
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin-bottom: 20px; /* Add space between items */
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+    flex: 1 1 100%; /* Make each item take full width on smaller screens */
   }
-  
-  .favorite-item h2 {
-    font-size: 24px;
-    color: #0f572b;
-    margin: 0;
+}
+
+@media (max-width: 640px) {
+  .favorite-item {
+    flex: 1 1 100%; /* Make each item take the full width on mobile */
   }
-  
-  .favorite-item p {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  /* Hover effect for favorite items */
-  .favorite-item:hover {
-    background-color: #07431b; /* Darker shade on hover */
-    color: white;
-    transform: scale(1.05);
-  }
-  
-  .favorite-item:active {
-    background-color: #052b15; /* Even darker shade when clicked */
-    transform: scale(0.98);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 991px) {
-    .favorite-item {
-      flex: 1 1 100%; /* Make each item take full width on smaller screens */
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .favorite-item {
-      flex: 1 1 100%; /* Make each item take full width on mobile */
-    }
-  }
-  
+}

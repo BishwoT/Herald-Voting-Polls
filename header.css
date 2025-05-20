@@ -12,27 +12,7 @@
     align-items: center;
     box-sizing: border-box;
     flex-wrap: wrap; /* Allow items to wrap if needed */
-  }
-  
-  /* Hamburger Menu */
-  .hamburger-menu {
-    cursor: pointer;
-    z-index: 15; /* Ensure hamburger icon is always visible */
-  }
-  
-  .hamburger-icon {
-    font-size: 30px;
-    color: #fff;
-    transition: transform 0.2s ease-in-out, opacity 0.1s ease; /* Smooth transition */
-  }
-  
-  .hamburger-menu:hover .hamburger-icon {
-    transform: scale(1.2); /* Enlarge the hamburger icon on hover */
-  }
-  
-  .hamburger-menu:active .hamburger-icon {
-    transform: scale(1.1); /* Slightly shrink the hamburger icon when clicked */
-    opacity: 0.8; /* Add slight transparency for click effect */
+    gap: 20px;
   }
   
   /* Logo */
@@ -50,13 +30,6 @@
     width: 30px;
     height: 30px;
     margin-right: 10px;
-  }
-  
-  /* Header Actions (Search & Profile) */
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
   }
   
   .search-container {
@@ -103,24 +76,18 @@
     margin-right: 10px;
   }
   
-  /* Sidebar Navigation */
+
   .sidebar {
     position: fixed;
     top: 80px; /* Position the sidebar below the header */
     left: 0;
-    height: calc(100vh - 80px); /* Make sure the sidebar height doesn't cover the header */
+    height: calc(100vh - 80px);
     width: 250px;
     background-color: #fff;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transform: translateX(0); /* Sidebar is open by default */
-    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
     z-index: 5;
     padding: 20px;
-  }
-  
-  /* Sidebar when it's active (open) */
-  .sidebar.active {
-    transform: translateX(0); /* When sidebar is active, it will slide in */
   }
   
   /* Navigation Menu */
@@ -218,7 +185,7 @@
   .nav-menu .nav-item a:hover {
     background-color: #e5e6e5; /* Darker green background on hover */
   }
-  
+
   .logo-text a {
     text-decoration: none;  /* Remove underline */
     color: inherit;         /* Inherit color from the parent element (nav-item) */

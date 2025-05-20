@@ -1,108 +1,86 @@
-/* General Layout */
-.dashboard-layout {
-    display: flex;
-    height: 100vh; /* Make sure the layout takes up the entire viewport */
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    width: 250px; /* Sidebar width */
-    background-color: #fff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    position: fixed;
-    top: 80px; /* Below header */
-    left: 0;
-    height: calc(100vh - 80px); /* Sidebar should take the height below the header */
-    z-index: 10;
-  }
-  
-  /* Main Content */
-  .main-content {
-    margin-left: 300px; /* Make sure the main content is pushed enough to the right */
-    margin-top: 80px; /* Space for header */
-    padding: 20px;
-    flex-grow: 1; /* Ensures it takes up remaining space */
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Browse Header */
-  .browse-header {
-    display: flex;
-    align-items: center;
-    margin-left: 350px; /* Align the Browse header with the sidebar */
-    margin-top: 70px;
-    font-size: 30px;
-    color: #0f572b; /* Matching color to header background */
-  }
-  
-  /* Browse Options Container */
+/* General Layout for Browse Page */
+.browse-page {
+  display: flex;
+  flex-direction: column; /* Arrange sections vertically */
+  height: 100vh; /* Ensure it takes the entire viewport height */
+  padding: 20px;
+}
+
+/* Browse Header */
+.browse-header {
+  font-size: 36px;
+  color: #0f572b; /* Matching color to header background */
+  text-align: left;
+  margin-top: 20px; /* Space from the top */
+  margin-left: 0;
+  padding: 10px;
+}
+
+/* Browse Options Container */
+.browse-options {
+  display: flex;
+  justify-content: space-between; /* Distribute the four options evenly */
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  padding-left: 0;
+}
+
+/* Browse Option Styles */
+.browse-option {
+  flex: 1 1 150px; /* Allow flexible sizing */
+  background-color: #f4f4f4;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.browse-option h2 {
+  font-size: 24px;
+  color: #0f572b; /* Header background color */
+  margin: 0;
+}
+
+.browse-option:hover {
+  background-color: #07431b; /* Darker shade on hover */
+  color: white;
+  transform: scale(1.05);
+}
+
+.browse-option:active {
+  background-color: #052b15; /* Even darker shade when clicked */
+  transform: scale(0.98);
+}
+
+/* Coming Soon Option */
+.browse-option.coming-soon {
+  background-color: #e0e0e0; /* Gray background for the "Coming Soon" option */
+  cursor: not-allowed; /* Disable the click */
+}
+
+.browse-option.coming-soon:hover {
+  background-color: #e0e0e0; /* No hover effect */
+  color: #888; /* Dimmed text color */
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
   .browse-options {
-    display: flex;
-    justify-content: space-between; /* Distribute the four options evenly */
-    gap: 15px;
-    margin-top: 5px;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    margin-left: 350px; /* Align options with sidebar */
+    flex-direction: column; /* Stack the options vertically on smaller screens */
+    align-items: center;
   }
-  
-  /* Browse Option Styles */
+
   .browse-option {
-    flex: 1 1 150px; /* Allow flexible sizing */
-    background-color: #f4f4f4;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex: 1 1 100%; /* Make the options take up full width */
+    margin-bottom: 20px;
   }
-  
-  .browse-option h2 {
-    font-size: 24px;
-    color: #0f572b; /* Header background color */
-    margin: 0;
+}
+
+@media (max-width: 640px) {
+  .browse-option {
+    flex: 1 1 100%; /* Make each option take the full width on mobile */
   }
-  
-  .browse-option:hover {
-    background-color: #07431b; /* Darker shade on hover */
-    color: white;
-    transform: scale(1.05);
-  }
-  
-  .browse-option:active {
-    background-color: #052b15; /* Even darker shade when clicked */
-    transform: scale(0.98);
-  }
-  
-  /* Coming Soon Option */
-  .browse-option.coming-soon {
-    background-color: #e0e0e0; /* Gray background for the "Coming Soon" option */
-    cursor: not-allowed; /* Disable the click */
-  }
-  
-  .browse-option.coming-soon:hover {
-    background-color: #e0e0e0; /* No hover effect */
-    color: #888; /* Dimmed text color */
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 991px) {
-    .browse-options {
-      flex-direction: column; /* Stack the options vertically on smaller screens */
-      align-items: center;
-    }
-  
-    .browse-option {
-      flex: 1 1 100%; /* Make the options take up full width */
-      margin-bottom: 20px;
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .browse-option {
-      flex: 1 1 100%; /* Make each option take the full width on mobile */
-    }
-  }
-  
+}
