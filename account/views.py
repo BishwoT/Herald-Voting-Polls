@@ -187,3 +187,25 @@ def password_reset(request):
 
     return Response({'message': 'Password reset successful.'})
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework import status
+from .models import HelpRequest
+from .serializers import HelpRequestSerializer
+
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def help_request_list_create(request):
+    if request.method == 'GET':
+        help_requests = HelpRequest.objects.filter(user=request.user)
+        serializer = HelpRequestSerializer(help_requests, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = HelpRequestSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

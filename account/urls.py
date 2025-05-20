@@ -11,4 +11,5 @@ urlpatterns = [
     path('otp/request/', views.request_otp, name='request_otp'),
     path('otp/verify/', views.verify_otp, name='verify_otp'),
     path('password-reset/', views.password_reset, name='password_reset'),
+    path('help-requests/', views.help_request_list_create, name='help_request_list_create'),
 ]

@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import CustomUser  # Import your custom user model
 from .models import OTPVerification
 from django.contrib.auth import get_user_model
+from .models import HelpRequest
 
 User = get_user_model()
 
@@ -42,3 +43,9 @@ class CustomUserSerializer(serializers.ModelSerializer):
         if obj.profile_photo and hasattr(obj.profile_photo, 'url'):
             return request.build_absolute_uri(obj.profile_photo.url)  # Return the full URL to the image
         return None
+    
+class HelpRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HelpRequest
+        fields = ['id', 'user', 'description', 'submitted_at', 'status']
+        read_only_fields = ['id', 'user', 'submitted_at', 'status']

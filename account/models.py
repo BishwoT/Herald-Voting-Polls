@@ -53,3 +53,18 @@ class OTPVerification(models.Model):
 
     def __str__(self):
         return f"OTP for {self.user.email} ({self.purpose})"
+    
+
+from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+class HelpRequest(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='help_requests')
+    description = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=20, default='Pending')
+
+    def __str__(self):
+        return f"HelpRequest #{self.id} by {self.user.email} - {self.status}"
